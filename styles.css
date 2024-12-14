@@ -1,0 +1,109 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.game-area {
+    width: 1000px;
+    height: 300px;
+    border: 2px solid #333;
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+}
+
+#dino {
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    border-radius: 5px;
+    transition: bottom 0.1s ease-out;
+}
+
+#dino.jump {
+    animation: jump 0.5s ease-out;
+}
+
+@keyframes jump {
+    0% { bottom: 0; }
+    50% { bottom: 150px; }
+    100% { bottom: 0; }
+}
+
+.cactus {
+    width: 30px;
+    height: 60px;
+    background-color: #4CAF50;
+    position: absolute;
+    bottom: 0;
+}
+
+.bonus {
+    width: 30px;
+    height: 30px;
+    background-color: gold;
+    position: absolute;
+    border-radius: 50%;
+    bottom: 50px;
+}
+
+.debuff {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    position: absolute;
+    border-radius: 50%;
+    bottom: 50px;
+}
+
+.score-board {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    gap: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+.message-board {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    color: #333;
+    transition: opacity 0.5s ease;
+}
+
+#autoJumpButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#autoJumpButton:hover {
+    background-color: #45a049;
+}
